@@ -1,0 +1,83 @@
+[
+ {
+  "doctype": "Custom Field",
+  "name": "Employee-epf_number",
+  "dt": "Employee",
+  "fieldname": "epf_number",
+  "label": "EPF Number",
+  "fieldtype": "Data",
+  "insert_after": "bank_ac_no",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Employee-bank_code",
+  "dt": "Employee",
+  "fieldname": "bank_code",
+  "label": "Bank Code",
+  "fieldtype": "Data",
+  "insert_after": "epf_number",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Employee-branch_code",
+  "dt": "Employee",
+  "fieldname": "branch_code",
+  "label": "Branch Code",
+  "fieldtype": "Data",
+  "insert_after": "bank_code",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Employee-bank_account_no",
+  "dt": "Employee",
+  "fieldname": "bank_account_no",
+  "label": "Bank Account No",
+  "fieldtype": "Data",
+  "insert_after": "branch_code",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Supplier-bank_code",
+  "dt": "Supplier",
+  "fieldname": "bank_code",
+  "label": "Bank Code",
+  "fieldtype": "Data",
+  "insert_after": "supplier_type",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Supplier-branch_code",
+  "dt": "Supplier",
+  "fieldname": "branch_code",
+  "label": "Branch Code",
+  "fieldtype": "Data",
+  "insert_after": "bank_code",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Supplier-bank_account_no",
+  "dt": "Supplier",
+  "fieldname": "bank_account_no",
+  "label": "Bank Account No",
+  "fieldtype": "Data",
+  "insert_after": "branch_code",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Salary Component-lk_epf_eligible",
+  "dt": "Salary Component",
+  "fieldname": "lk_epf_eligible",
+  "label": "EPF Eligible (LK)",
+  "fieldtype": "Check",
+  "insert_after": "type",
+  "default": "0",
+  "description": "At-a-glance marker for HR staff. The value actually used by payroll calculations is the whitelist on LK Statutory Config > EPF-Eligible Earning Components (kept there, not here, so it is versioned alongside the rates -- see README.md)."
+ }
+]

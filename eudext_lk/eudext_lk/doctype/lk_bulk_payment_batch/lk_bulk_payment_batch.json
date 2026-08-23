@@ -1,0 +1,160 @@
+{
+ "actions": [],
+ "autoname": "LKBPB-.YYYY.-.#####",
+ "creation": "2026-08-23 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "source_type",
+  "payroll_entry",
+  "column_break_source",
+  "bank_format",
+  "debit_account",
+  "value_date",
+  "payee_section",
+  "payee_lines",
+  "totals_section",
+  "total_amount",
+  "column_break_totals",
+  "status",
+  "generated_file",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "source_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Source Type",
+   "options": "Payroll Entry\nPurchase Invoice",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.source_type == 'Payroll Entry'",
+   "fieldname": "payroll_entry",
+   "fieldtype": "Link",
+   "label": "Payroll Entry",
+   "options": "Payroll Entry"
+  },
+  {
+   "fieldname": "column_break_source",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bank_format",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Bank Format",
+   "options": "LK Bank File Format",
+   "reqd": 1
+  },
+  {
+   "fieldname": "debit_account",
+   "fieldtype": "Link",
+   "label": "Debit Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "value_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Value Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payee_section",
+   "fieldtype": "Section Break",
+   "label": "Payees"
+  },
+  {
+   "fieldname": "payee_lines",
+   "fieldtype": "Table",
+   "label": "Payee Lines",
+   "options": "LK Bulk Payment Batch Payee"
+  },
+  {
+   "fieldname": "totals_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_totals",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nSubmitted\nFile Generated\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "generated_file",
+   "fieldtype": "Attach",
+   "label": "Generated File",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "LK Bulk Payment Batch",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-23 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Eudext LK",
+ "name": "LK Bulk Payment Batch",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "print": 1,
+   "read": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

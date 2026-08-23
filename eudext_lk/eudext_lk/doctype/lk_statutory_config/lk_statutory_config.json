@@ -1,0 +1,108 @@
+{
+ "actions": [],
+ "creation": "2026-08-23 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "rates_section",
+  "employee_epf_rate",
+  "employer_epf_rate",
+  "column_break_rates",
+  "etf_rate",
+  "effective_from",
+  "apit_section",
+  "apit_slabs",
+  "epf_section",
+  "epf_eligible_components"
+ ],
+ "fields": [
+  {
+   "fieldname": "rates_section",
+   "fieldtype": "Section Break",
+   "label": "Contribution Rates"
+  },
+  {
+   "default": "8",
+   "description": "Percentage of EPF-eligible gross deducted from the employee",
+   "fieldname": "employee_epf_rate",
+   "fieldtype": "Percent",
+   "label": "Employee EPF Rate (%)",
+   "reqd": 1
+  },
+  {
+   "default": "12",
+   "description": "Percentage of EPF-eligible gross contributed by the employer",
+   "fieldname": "employer_epf_rate",
+   "fieldtype": "Percent",
+   "label": "Employer EPF Rate (%)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rates",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "3",
+   "description": "Percentage of EPF-eligible gross contributed by the employer",
+   "fieldname": "etf_rate",
+   "fieldtype": "Percent",
+   "label": "ETF Rate (%)",
+   "reqd": 1
+  },
+  {
+   "description": "Saving changes here publishes a new dated snapshot to LK Statutory Config Version, so historic payrolls keep recalculating with the rates that were actually in force.",
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "label": "Effective From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "apit_section",
+   "fieldtype": "Section Break",
+   "label": "APIT Slabs"
+  },
+  {
+   "fieldname": "apit_slabs",
+   "fieldtype": "Table",
+   "label": "APIT Slabs",
+   "options": "LK APIT Slab"
+  },
+  {
+   "fieldname": "epf_section",
+   "fieldtype": "Section Break",
+   "label": "EPF-Eligible Earning Components"
+  },
+  {
+   "fieldname": "epf_eligible_components",
+   "fieldtype": "Table",
+   "label": "EPF-Eligible Earning Components",
+   "options": "LK EPF Eligible Component"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-08-23 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Eudext LK",
+ "name": "LK Statutory Config",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "HR Manager"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

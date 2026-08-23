@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "autoname": "field:format_code",
+ "creation": "2026-08-23 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "bank_name",
+  "format_code",
+  "column_break_details",
+  "file_extension",
+  "delimiter",
+  "format_section",
+  "has_header",
+  "has_trailer",
+  "column_break_format",
+  "date_format",
+  "amount_format",
+  "mapping_section",
+  "column_mapping"
+ ],
+ "fields": [
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Bank Name",
+   "reqd": 1
+  },
+  {
+   "description": "Key used to look up the generator class in the banking module's registry, e.g. COMBANK_CSV",
+   "fieldname": "format_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Format Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_details",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "csv",
+   "fieldname": "file_extension",
+   "fieldtype": "Data",
+   "label": "File Extension"
+  },
+  {
+   "default": ",",
+   "fieldname": "delimiter",
+   "fieldtype": "Data",
+   "label": "Delimiter"
+  },
+  {
+   "fieldname": "format_section",
+   "fieldtype": "Section Break",
+   "label": "Layout"
+  },
+  {
+   "default": "1",
+   "fieldname": "has_header",
+   "fieldtype": "Check",
+   "label": "Has Header Row"
+  },
+  {
+   "default": "1",
+   "fieldname": "has_trailer",
+   "fieldtype": "Check",
+   "label": "Has Trailer Row"
+  },
+  {
+   "fieldname": "column_break_format",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "%d/%m/%Y",
+   "fieldname": "date_format",
+   "fieldtype": "Data",
+   "label": "Date Format"
+  },
+  {
+   "default": "Decimal",
+   "fieldname": "amount_format",
+   "fieldtype": "Select",
+   "label": "Amount Format",
+   "options": "Decimal\nCents"
+  },
+  {
+   "fieldname": "mapping_section",
+   "fieldtype": "Section Break",
+   "label": "Column Mapping"
+  },
+  {
+   "description": "Reference documentation of the output column order; the generator class registered for this format_code is the source of truth for actual byte layout.",
+   "fieldname": "column_mapping",
+   "fieldtype": "Table",
+   "label": "Column Mapping",
+   "options": "LK Bank File Column Mapping"
+  }
+ ],
+ "links": [],
+ "modified": "2026-08-23 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Eudext LK",
+ "name": "LK Bank File Format",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "HR Manager"
+  },
+  {
+   "read": 1,
+   "role": "Accounts Manager"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "bank_name"
+}

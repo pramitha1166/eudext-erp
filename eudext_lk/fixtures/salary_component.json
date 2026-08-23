@@ -1,0 +1,52 @@
+[
+ {
+  "doctype": "Salary Component",
+  "name": "EPF Employee 8%",
+  "salary_component": "EPF Employee 8%",
+  "salary_component_abbr": "EPFE8",
+  "type": "Deduction",
+  "amount_based_on_formula": 1,
+  "formula": "epf_employee_amount(gross_pay, start_date)",
+  "statistical_component": 0,
+  "depends_on_payment_days": 0,
+  "disabled": 0
+ },
+ {
+  "doctype": "Salary Component",
+  "name": "EPF Employer 12%",
+  "salary_component": "EPF Employer 12%",
+  "salary_component_abbr": "EPFR12",
+  "type": "Deduction",
+  "amount_based_on_formula": 1,
+  "formula": "epf_employer_amount(gross_pay, start_date)",
+  "do_not_include_in_total": 1,
+  "depends_on_payment_days": 0,
+  "disabled": 0,
+  "description": "Employer contribution -- do_not_include_in_total=1 so it shows as a row on the slip without reducing net pay."
+ },
+ {
+  "doctype": "Salary Component",
+  "name": "ETF 3%",
+  "salary_component": "ETF 3%",
+  "salary_component_abbr": "ETF3",
+  "type": "Deduction",
+  "amount_based_on_formula": 1,
+  "formula": "etf_amount(gross_pay, start_date)",
+  "do_not_include_in_total": 1,
+  "depends_on_payment_days": 0,
+  "disabled": 0,
+  "description": "Employer contribution -- do_not_include_in_total=1 so it shows as a row on the slip without reducing net pay."
+ },
+ {
+  "doctype": "Salary Component",
+  "name": "APIT",
+  "salary_component": "APIT",
+  "salary_component_abbr": "APIT",
+  "type": "Deduction",
+  "amount_based_on_formula": 1,
+  "formula": "apit_amount(gross_pay, start_date)",
+  "statistical_component": 0,
+  "depends_on_payment_days": 0,
+  "disabled": 0
+ }
+]

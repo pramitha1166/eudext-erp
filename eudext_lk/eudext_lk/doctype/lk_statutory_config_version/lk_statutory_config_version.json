@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "autoname": "field:effective_from",
+ "creation": "2026-08-23 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "effective_from",
+  "employee_epf_rate",
+  "employer_epf_rate",
+  "column_break_rates",
+  "etf_rate",
+  "apit_section",
+  "apit_slabs",
+  "epf_section",
+  "epf_eligible_components"
+ ],
+ "fields": [
+  {
+   "description": "Date this snapshot of rates came into force. Payroll runs use the version whose effective_from is the latest one on or before the payroll period.",
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "label": "Effective From",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "employee_epf_rate",
+   "fieldtype": "Percent",
+   "label": "Employee EPF Rate (%)",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "employer_epf_rate",
+   "fieldtype": "Percent",
+   "label": "Employer EPF Rate (%)",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rates",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "etf_rate",
+   "fieldtype": "Percent",
+   "label": "ETF Rate (%)",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "apit_section",
+   "fieldtype": "Section Break",
+   "label": "APIT Slabs"
+  },
+  {
+   "fieldname": "apit_slabs",
+   "fieldtype": "Table",
+   "label": "APIT Slabs",
+   "options": "LK APIT Slab",
+   "read_only": 1
+  },
+  {
+   "fieldname": "epf_section",
+   "fieldtype": "Section Break",
+   "label": "EPF-Eligible Earning Components"
+  },
+  {
+   "fieldname": "epf_eligible_components",
+   "fieldtype": "Table",
+   "label": "EPF-Eligible Earning Components",
+   "options": "LK EPF Eligible Component",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-08-23 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Eudext LK",
+ "name": "LK Statutory Config Version",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "HR Manager"
+  }
+ ],
+ "sort_field": "effective_from",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "effective_from"
+}

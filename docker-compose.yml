@@ -1,0 +1,19 @@
+services:
+  eudext-erp:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: eudext-erp:latest
+    ports:
+      - "8000:8000"
+    environment:
+      SITE_NAME: eudext.local
+      DB_ROOT_PASSWORD: admin
+      ADMIN_PASSWORD: admin
+    volumes:
+      - mariadb-data:/var/lib/mysql
+      - bench-sites:/home/frappe/frappe-bench/sites
+
+volumes:
+  mariadb-data:
+  bench-sites:
